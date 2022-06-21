@@ -5,3 +5,8 @@ function printResult(num) {
     console.log("Result: " + num);
 }
 printResult(add(5, 12));
+var combineValues;
+combineValues = add;
+// combineValues = 5
+combineValues = printResult;
+console.log(combineValues(5, 7));
