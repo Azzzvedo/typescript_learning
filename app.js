@@ -1,25 +1,15 @@
-var Role;
-(function (Role) {
-    Role[Role["ADMIN"] = 0] = "ADMIN";
-    Role[Role["READ_ONLY"] = 1] = "READ_ONLY";
-    Role[Role["AUTHOR"] = 2] = "AUTHOR";
-})(Role || (Role = {}));
-var person = {
-    name: "Maximilian",
-    age: 30,
-    hobbies: ["Sports", "Cooking"],
-    role: Role.ADMIN
-};
-var favoriteActivities;
-favoriteActivities = ["Sports"];
-// console.log(person.name);
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    // console.log(hobby.toUpperCase());
+// combine function that favours type coercion to number rather than to string
+function combine(input1, input2) {
+    var result;
+    if (typeof input1 === "number" || typeof input2 === "number") {
+        result = +input1 + +input2;
+    }
+    else if (typeof input1 === "string" || typeof input2 === "string") {
+        result = input1 + input2;
+    }
+    return result;
 }
-// tuple exception
-// person.role.push("admin");
-// console.log(person.role);
-if (person.role === Role.ADMIN) {
-    console.log("admin");
-}
+var combinedAges = combine(30, 25);
+console.log(combinedAges);
+var combinedNames = combine("Ian", "Rebecca");
+console.log(combinedNames);
